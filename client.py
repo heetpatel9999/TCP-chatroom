@@ -53,19 +53,16 @@ class ChatRoomApp:
         self.spacer.pack(side=tk.TOP)
         self.message_frame = tk.Frame(self.master)
         self.message_frame.pack(side=tk.TOP, fill=tk.X,padx=10)
-
-        # Entry for typing messages
+        
         self.message_entry = tk.Entry(self.message_frame)
         self.message_entry.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        # Button to send messages
         self.send_button = tk.Button(self.message_frame, text="Send", command=self.send_message)
         self.send_button.pack(side=tk.RIGHT,pady=5)
 
         self.spacer = tk.Frame(self.master, height=10)
         self.spacer.pack(side=tk.TOP)
 
-        # Chat display area
         self.chat_display = scrolledtext.ScrolledText(self.master, state='disabled')
         self.chat_display.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
@@ -84,7 +81,6 @@ class ChatRoomApp:
         self.chat_display.configure(state='normal')
         self.chat_display.insert(tk.END, message + '\n')
         self.chat_display.configure(state='disabled')
-        # Scroll to the bottom
         self.chat_display.see(tk.END)
 
 
