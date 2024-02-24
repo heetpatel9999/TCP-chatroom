@@ -8,7 +8,7 @@ class ChatRoomApp:
         self.master = master
         master.title("Chat Room")
 
-        # Entry for entering name
+        
         self.name_label = tk.Label(master, text="Enter your name:")
         self.name_label.pack()
 
@@ -21,7 +21,7 @@ class ChatRoomApp:
     def connect_to_server(self):
         name = self.name_entry.get()
         if name:
-            # Remove name input elements
+
             self.name_label.destroy()
             self.name_entry.destroy()
             self.name_button.destroy()
@@ -73,7 +73,7 @@ class ChatRoomApp:
     def send_message(self):
         message = self.message_entry.get()
         if message:
-            self.message_entry.delete(0, tk.END)  # Clear the message entry
+            self.message_entry.delete(0, tk.END)  
             full_message = f'{self.name}: {message}'
             self.client.send(full_message.encode('utf-8'))
 
